@@ -1,9 +1,14 @@
-/** @type {import('next').NextConfig} */
+javascript/** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Uncomment the following line to build a static site.
-   output: "export",
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
+  // Додаємо підтримку src директорії
+  experimental: {
+    appDir: false // якщо використовуєте pages router
+  }
+}
 
-  reactStrictMode: true,
-};
-
-export default nextConfig;
+module.exports = nextConfig
